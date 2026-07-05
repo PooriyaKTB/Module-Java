@@ -16,6 +16,12 @@ public class Product {
         this(name, price, 0);
     }
 
+    // Exercise 1.2 ->
+    public Product(Product currentProduct) {
+        this(currentProduct.name, currentProduct.price, currentProduct.stockCount);
+    }
+    // <-
+
     public void setName(String name) {
         this.name = name;
     }
