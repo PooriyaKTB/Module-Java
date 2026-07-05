@@ -1,7 +1,7 @@
 package src.prep;
 
 public class Exercise2_4 {
-    public static void weekDays(int num){
+    public static void weekDays(int num) {
         switch (num) {
             case 1:
                 System.out.println("Monday");
