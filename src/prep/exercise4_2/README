@@ -1,0 +1,38 @@
+✍️Exercise 4.2 - Final Safety
+This exercise explores the three main uses of final: fields, methods, and classes.
+
+Final Fields
+Create a class named Configuration in a package of your choice.
+Class Constant: Add a public static final field for a universally constant value: public static final int MAX_USERS = 100;
+Final Instance Field: Add a private final field: private final String systemName;
+Initialise it in the constructor.
+Test in main:
+Try to reassign Configuration.MAX_USERS = 200; and observe the compiler error.
+Create a Configuration instance. Try to reassign its systemName field (you’ll need to create a setter for this) and observe the compiler error
+Final Methods and Classes
+Create a parent class
+
+Create a class named Polygon in your package.
+Add a private final int field for numberOfSides.
+Create a constructor that does not include this field, what happens?
+Create a constructor that takes a numberOfSides parameter and initialises the field.
+Add a getter method getNumberOfSides() to return the value of numberOfSides.
+Add a public final method describe() that prints: ‘I am a polygon with X sides’ where X is the numberOfSides field
+Try to create a setter for numberOfSides. Can you compile it?
+Create a subclass
+
+Create a class named Triangle that extends Polygon.
+In the constructor, call the superclass constructor with 3 sides.
+Try to override the describe() method in Triangle. What error does the compiler give you?
+Make the parent class final
+
+Change the Polygon class declaration to:
+public final class Polygon
+Try to compile the Triangle class. What error do you get?
+Think about the following questions, make notes and be prepared to talk through your thoughts in the workshop.
+
+Why can MAX_USERS never be reassigned?
+Why can the systemName field not be reassigned, even via a setter?
+Why can’t you add a setter for numberOfSides?
+How do final fields in Configuration and Polygon serve different purposes?
+Why might a designer choose to make a class final?

@@ -6,7 +6,7 @@
 `Exercise 3.2` - Overloading vs Overriding => `PaymentMethod` package
 `Exercise 3.3` - Composition vs Inheritance => `PaymentMethod` package
 `Exercise 4.1` - Static Instance Counter => planet
-`Exercise 4.2` - Final Safety => Configuration
+`Exercise 4.2` - Final Safety => exercise4_2
 
 NOTEs:
 -In 4th section of prep, I just realised that to follow the package naming conventions we define our package in all lower-case. I didn't apply it so far, but will follow it now on.
