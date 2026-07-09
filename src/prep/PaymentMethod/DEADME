@@ -1,0 +1,48 @@
+✍️Exercise 3.2 - Overloading vs Overriding
+Starting with:
+
+class PaymentMethod {
+    void pay(double amount) {
+        System.out.println("Paying " + amount ");
+    }
+}
+
+Overload the pay method:
+
+Add an overloaded pay(double amount, String currency)
+Implement the method to reference the currency when paying
+Instantiate a PaymentMethod class in your main method and call both methods of pay
+Override the pay method:
+
+Create DirectDebit extending PaymentMethod
+Override pay(double amount)
+Instantiate a DirectDebit class and call both methods of pay
+Think about the following questions, make notes and be prepared to talk through your thoughts in the workshop.
+
+How does Java choose between overloaded methods?
+How does Java choose an overridden method at runtime?
+Why can overloading sometimes be confusing or misleading when reading code?
+How does this exercise reinforce the difference between “same method name” and “same behaviour”?
+
+✍️Exercise 3.3 - Composition vs Inheritance
+Building on the last exercise, we now need to support a checkout process. A checkout must be able to take a payment using a payment method.
+
+Tasks:
+
+Create a Checkout class.
+Decide how Checkout should relate to PaymentMethod. Should Checkout extend PaymentMethod, or should it contain a PaymentMethod?
+Implement the chosen relationship, if your Checkout class contains a PaymentMethod remember to instantiate it inside your constructor
+Add a method processPayment(double amount) in Checkout that uses the payment method to make a payment.
+In your main method:
+Create a PaymentMethod
+Create a Checkout
+Call your processPayment method
+Stretch task - implement a different extension of PaymentMethod, and add a method to Checkout that lets you update the PaymentMethod before making a payment
+Think about the following questions, make notes and be prepared to talk through your thoughts in the workshop.
+
+Why did you choose HAS-A (or IS-A) for the Checkout and PaymentMethod relationship?
+What reasoning helped you decide which relationship makes sense?
+How does your choice affect the design and functionality of the Checkout class?
+What would happen if you chose the wrong relationship?
+How do IS-A and HAS-A relationships help you think about code reuse and composition in real applications?
+Can you imagine other classes where this distinction is important?

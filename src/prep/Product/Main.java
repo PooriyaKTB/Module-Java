@@ -1,4 +1,4 @@
-package src.prep;
+package src.prep.Product;
 
 public class Main {
     public static void main(String[] args) {

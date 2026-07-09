@@ -1,0 +1,47 @@
+✍️Exercise 2.1 - Fix the direct balance access using encapsulation
+Starting with:
+
+class BankAccount {
+  public double balance;
+}
+class BankService {
+  void withdraw(BankAccount account, double amount) {
+    account.balance = account.balance - amount;
+  }
+  void deposit(BankAccount account, double amount) {
+    account.balance = account.balance + amount;
+  }
+}
+public class Main {
+  public static void main(String[] args) {
+    BankAccount account = new BankAccount();
+    account.balance = 100;
+    BankService service = new BankService();
+    service.withdraw(account, 150);
+    System.out.println("Balance: " + account.balance);
+  }
+}
+
+Tasks:
+
+Make balance private in BankAccount
+
+Add methods to BankAccount to allow for deposits, withdrawals and balance checks without direct field access
+
+Add validation to these methods:
+
+deposit amount must be > 0
+
+withdraw amount must be > 0
+
+balance must never go below 0
+
+Update BankService so it no longer accesses account.balance directly
+
+Update Main so it no longer reads/writes balance directly
+
+Think about the following questions, make notes and be prepared to talk through your thoughts in the workshop.
+
+How did making balance private change how the system had to interact with BankAccount?
+Why is it better for BankAccount to manage its own deposits and withdrawals rather than BankService?
+How does this refactor make misuse of BankAccount harder or impossible?

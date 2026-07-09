@@ -1,0 +1,56 @@
+✍️Exercise 2.2 - Abstraction in Code
+Start with this class, for a logging system:
+
+class FileLogger {
+  private boolean fileOpen = false;
+  public void openFile() {
+    if (fileOpen) {
+      throw new IllegalStateException("File already open");
+    }
+    System.out.println("Opening log file...");
+    fileOpen = true;
+  }
+  public void writeLine(String line) {
+    if (!fileOpen) {
+      throw new IllegalStateException("Cannot write - file not open");
+    }
+    System.out.println("LOG: " + line);
+  }
+  public void closeFile() {
+    if (!fileOpen) {
+      throw new IllegalStateException("File already closed");
+    }
+    System.out.println("Closing log file...");
+    fileOpen = false;
+  }
+}
+
+In your main method, use FileLogger directly to log a message:
+
+Create a FileLogger instance
+Call openFile()
+Call writeLine() with a message
+Call closeFile()
+Think about the following:
+
+Try calling writeLine() before openFile(), what happens and why?
+If this were a real logger implementation, what might happen if another developer forgets to call closeFile()?
+Create a new class called ApplicationLogger, which will provide an abstraction over FileLogger:
+
+Create a single method in this logger which calls each method on FileLogger in the correct order
+Update main() to use ApplicationLogger instead of FileLogger directly, checking that logging still works
+We now have a new requirement for the ApplicationLogger - the ability to log out [INFO] and [ERROR] level logs:
+
+Refactor the existing method you’ve created to prepend the logged message with [INFO] and call it logInfo
+Create a new method called logError which prepends [ERROR]
+Use these new methods in your main() method
+Think about the following questions, make notes and be prepared to talk through your thoughts in the workshop.
+
+What complexity does ApplicationLogger hide from other classes?
+How did the main method change when switching from FileLogger to ApplicationLogger?
+Why is the new version simpler to use correctly?
+What mistakes can other developers no longer make when using ApplicationLogger?
+Why is this important in large systems?
+If the system later logged to a database instead of a file, which class would you change?
+Why is it useful that main() does not know how logging works internally?
+How does this demonstrate abstraction reducing system complexity?
