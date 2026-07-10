@@ -1,6 +1,10 @@
 package src.prep.exercise4_2.polygon;
 
+/**
+ * Represents a polygon defined by its number of sides.
+ */
 public class Polygon {
+
     private final int numberOfSides;
 
     Polygon(int numberOfSides) {

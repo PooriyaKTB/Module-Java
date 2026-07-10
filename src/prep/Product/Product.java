@@ -1,5 +1,8 @@
 package src.prep.Product;
 
+/**
+ * Represents a product in the inventory system.
+ */
 public class Product {
 
     private String name;

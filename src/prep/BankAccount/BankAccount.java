@@ -1,9 +1,16 @@
 package src.prep.BankAccount;
 
+/**
+ * Represents a bank account with basic transaction operations.
+ */
 class BankAccount {
+
     private double balance;
 
-    // *** "setBalance" method is actually a dead code right now and can be omitted, because app use "deposit" or "withdraw" methods to manipulate the "balance"
+    /**
+     * @deprecated
+     * this method is no longer acceptable, because the app uses "deposit" or "withdraw" methods to manipulate the "balance"
+     */
     private void setBalance(double balance) {
         if (balance > 0) this.balance = balance;
     }
@@ -31,15 +38,19 @@ class BankAccount {
     }
 
     /**
-     * This method ensures that the given amount can be withdrawn by checking whether it's less than or equal to current balance, then if it was approved do the withdrawal or send the unsuccessful message.
-     * @param amount the given amount for withdrawal.
+     * This method Processes a withdrawal request after validating the amount and available balance.
+     * @param amount the given amount to withdrawal.
      */
     public void withdraw(double amount) {
         if (amount > 0 && amount <= this.balance) {
             this.balance -= amount;
             sendMessage("%.2f withdrawn", amount);
+        } else if (amount <= 0) {
+            sendMessage("Withdraw %.2f failed due to invalid amount entered.", amount);
+        } else if( amount > this.balance){
+            sendMessage("Withdraw %.2f failed due to insufficient balance.", amount);
         } else {
-            sendMessage("Withdraw %.2f failed due to insufficient balance or invalid amount entered.", amount);
+            sendMessage("Withdraw %.2f failed due to internal error, Please try again.", amount);
         }
     }
 }

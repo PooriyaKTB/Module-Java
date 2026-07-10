@@ -2,6 +2,7 @@ package src.prep.PaymentMethod;
 
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("*** Payment.pay() ***");
         PaymentMethod payment = new PaymentMethod();
         payment.pay(9.99);

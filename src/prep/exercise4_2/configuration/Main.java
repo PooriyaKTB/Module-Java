@@ -1,7 +1,9 @@
 package src.prep.exercise4_2.configuration;
 
 public class Main {
+
     public static void main(String[] args) {
+
 //        Configuration.MAX_USERS = 200; // java: cannot assign a value to final variable MAX_USERS
 
         Configuration config = new Configuration("config");

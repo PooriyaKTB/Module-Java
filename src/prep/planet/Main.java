@@ -1,6 +1,7 @@
 package src.prep.planet;
 
 public class Main {
+
     public static void main(String[] args) {
         Planet earth = new Planet("Earth");
         System.out.println(Planet.getPlanetCount());

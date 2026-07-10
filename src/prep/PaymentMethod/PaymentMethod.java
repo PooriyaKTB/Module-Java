@@ -1,10 +1,23 @@
 package src.prep.PaymentMethod;
 
+/**
+ * Represents a payment processing interface.
+ */
 public class PaymentMethod {
+
+    /**
+     * Processes payment in the default currency.
+     * @param amount the amount to pay
+     */
     void pay(double amount) {
         System.out.println("Paying " + amount + "...");
     }
 
+    /**
+     * Processes payment in the specified currency.
+     * @param amount   the amount to pay
+     * @param currency the currency eg. £, $, GBP, USD, EUR
+     */
     void pay(double amount, String currency) {
 //        System.out.println(String.format("Paying %.2f%s...", amount, currency));
 //        OR

@@ -1,6 +1,7 @@
 package src.prep.exercise4_2.polygon;
 
 public class Triangle extends Polygon {
+
     Triangle() {
         super(3);
     }

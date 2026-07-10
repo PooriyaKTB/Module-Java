@@ -1,6 +1,10 @@
 package src.prep.exercise4_2.polygon;
 
+/**
+ * Entry point for the polygon application.
+ */
 public class Main {
+
     public static void main(String[] args) {
         Polygon polygon = new Polygon(7);
         System.out.println(polygon.getNumberOfSides());

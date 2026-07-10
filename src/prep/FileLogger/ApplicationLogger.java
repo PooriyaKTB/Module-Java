@@ -1,6 +1,11 @@
 package src.prep.FileLogger;
 
+/**
+ * Provides logging functionality for the application,
+ * abstracting file operations.
+ */
 public class ApplicationLogger {
+
 //    public void logInfo(String tag, String line) {
 //        FileLogger fileLogger = new FileLogger();
 //        fileLogger.openFile();
@@ -24,10 +29,18 @@ public class ApplicationLogger {
         fileLogger.closeFile();
     }
 
+    /**
+     * Logs an informational message.
+     * @param line the message to log
+     */
     public void logInfo(String line) {
         logging("[INFO] ", line);
     }
 
+    /**
+     * Logs an error message.
+     * @param line the error message to log
+     */
     public void logError(String line) {
         logging("[ERROR] ", line);
     }

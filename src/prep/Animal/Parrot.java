@@ -1,6 +1,7 @@
 package src.prep.Animal;
 
 public class Parrot extends Animal {
+
     Parrot(String name) {
         super(name);
     }
