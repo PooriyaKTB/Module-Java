@@ -31,7 +31,7 @@ public class Task {
         return taskDescription;
     }
 
-    public int getTaskId() {
+    public final int getTaskId() {
         return taskId;
     }
 
@@ -55,7 +55,7 @@ public class Task {
      * Marks the task as completed.
      * If the task is already completed, it prevents double-completion and notifies the user.
      */
-    public void completeTask() {
+    public final void completeTask() {
         if (!isCompleted) {
             isCompleted = true;
             System.out.printf("Task \"%s\" has been marked as Completed!\n", taskName);
