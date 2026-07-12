@@ -9,31 +9,50 @@ public class Main {
 
     public static void main(String[] args) {
 
+        System.out.println("-----------------*** First manager instance ***-----------------");
+
         TaskManager manager = new TaskManager(5);
         manager.createTask(new PrioritisedTask("task 1", "Sprint 1-prep", "Urgent"));
         manager.createTask(new ScheduledTask("task 2", "Sprint 1-backlog", "By end of week"));
-        manager.createTask(new Task("task 2", "Open PR"));
+        manager.createTask(new Task("task 3", "Open PR"));
+        manager.createTask(new PrioritisedTask("task 4", "Sprint 2-prep", "Urgent"));
+        manager.createTask(new ScheduledTask("task 5", "Sprint 2-backlog", "By end of week"));
+        manager.createTask(new Task("task 6", "Open PR"));
+        manager.createTask(new Task("task 7", "Review PR"));
 
-        TaskManager manager2 = new TaskManager(5);
-        manager2.createTask(new PrioritisedTask("task 1", "Sprint 2-prep", "Urgent"));
-        manager2.createTask(new ScheduledTask("task 2", "Sprint 2-backlog", "By end of week"));
-        manager2.createTask(new Task("task 2", "Open PR"));
-
+        System.out.println("---------------------------------------");
 
         manager.markTaskCompleteById(0);
         manager.markTaskCompleteById(1);
 //        manager.markTaskCompleteById(2);
-        System.out.println();
 
+        System.out.println("------------** COMPLETED **------------");
         manager.getTasksByStatus(true);
+        System.out.println("------------** INCOMPLETE **------------");
         manager.getTasksByStatus(false);
 
-        manager2.getTasksByStatus(true);
-        manager2.getTasksByStatus(false);
+        System.out.println("---------------------------------------");
 
         manager.getCompletedTasks();
         System.out.println("COMPLETED ONLY:");
         manager.printOnlyCompletedTasks();
+
+        System.out.println("-----------------*** Second manager instance ***-----------------");
+
+        TaskManager manager2 = new TaskManager(10);
+        manager2.createTask(new PrioritisedTask("task 1", "Sprint 2-prep", "Urgent"));
+        manager2.createTask(new ScheduledTask("task 2", "Sprint 2-backlog", "By end of week"));
+        manager2.createTask(new Task("task 2", "Open PR"));
+        manager2.createTask(new Task("task 2", "Open PR"));
+
+        manager2.markTaskCompleteById(1);
+        manager2.markTaskCompleteById(2);
+        manager2.markTaskCompleteById(8);
+
+        System.out.println("------------** COMPLETED-2 **------------");
+        manager2.getTasksByStatus(true);
+        System.out.println("------------** INCOMPLETE-2 **------------");
+        manager2.getTasksByStatus(false);
     }
 }
 

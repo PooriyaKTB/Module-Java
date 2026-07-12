@@ -34,6 +34,6 @@ public class PrioritisedTask extends Task {
      */
     @Override
     public String toString() {
-        return String.format("--- Task ID %d ---\nName: %s\nDescription: %s\nPriority: %s\nType: %s\nStatus: %s\n", getTaskId(), getTaskName(), getTaskDescription(), taskPriority, getTaskType(), getTaskStatus());
+        return String.format("---* Task ID %d *---\nName: %s\nDescription: %s\nPriority: %s\nType: %s\nStatus: %s\n", getTaskId(), getTaskName(), getTaskDescription(), taskPriority, getTaskType(), getTaskStatus());
     }
 }

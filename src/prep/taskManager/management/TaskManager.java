@@ -35,7 +35,7 @@ public class TaskManager {
             tasksArray[taskCount] = task;
             taskCount++;
         } else {
-            System.out.println("Task manager is full");
+            System.out.printf("Task manager is full, Manager can have up to %d tasks.\n", tasksArray.length);
         }
     }
 

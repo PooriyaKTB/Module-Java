@@ -70,6 +70,6 @@ public class Task {
      */
     @Override
     public String toString() {
-        return String.format("--- Task ID %d ---\nName: %s\nDescription: %s\nType: %s\nStatus: %s\n", taskId, taskName, taskDescription, getTaskType(), getTaskStatus());
+        return String.format("---* Task ID %d *---\nName: %s\nDescription: %s\nType: %s\nStatus: %s\n", taskId, taskName, taskDescription, getTaskType(), getTaskStatus());
     }
 }

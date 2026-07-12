@@ -34,6 +34,6 @@ public class ScheduledTask extends Task {
      */
     @Override
     public String toString() {
-        return String.format("--- Task ID %d ---\nName: %s\nDescription: %s\nDeadline: %s\nType: %s\nStatus: %s\n", getTaskId(), getTaskName(), getTaskDescription(), taskDeadline, getTaskType(), getTaskStatus());
+        return String.format("---* Task ID %d *---\nName: %s\nDescription: %s\nDeadline: %s\nType: %s\nStatus: %s\n", getTaskId(), getTaskName(), getTaskDescription(), taskDeadline, getTaskType(), getTaskStatus());
     }
 }
