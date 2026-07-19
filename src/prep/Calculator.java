@@ -20,4 +20,15 @@ public class Calculator {
         }
         return a / b;
     }
+
+    public int square(int a) {
+        return a * a;
+    }
+
+    public  double squareRoot(int a){
+        if (a < 0) {
+            throw new IllegalArgumentException("Cannot calculate square root of negative number");
+        }
+        return Math.sqrt(a);
+    }
 }

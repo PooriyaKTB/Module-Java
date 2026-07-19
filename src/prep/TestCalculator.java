@@ -1,9 +1,6 @@
 package src.prep;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -48,7 +45,9 @@ class CalculatorTest {
         Assertions.assertAll(
                 () -> assertEquals(10, calc.multiply(2, 5)),
                 () -> assertEquals(100, calc.multiply(10, 10)),
-                () -> assertEquals(50, calc.multiply(2, 25))
+                () -> assertEquals(50, calc.multiply(2, 25)),
+                () -> assertEquals(0, calc.multiply(0, 25)),
+                () -> assertEquals(-25, calc.multiply(-1, 25))
         );
     }
 
@@ -58,7 +57,34 @@ class CalculatorTest {
         Assertions.assertAll(
                 () -> assertEquals(1, calc.subtract(100, 99)),
                 () -> assertEquals(10, calc.subtract(50, 40)),
-                () -> assertEquals(-1, calc.subtract(99, 100))
+                () -> assertEquals(-1, calc.subtract(99, 100)),
+                () -> assertEquals(199, calc.subtract(99, -100))
+        );
+    }
+
+    @Test
+    @DisplayName("Test for square()")
+    void testSquare() {
+        Assertions.assertAll(
+                () -> assertEquals(9, calc.square(3)),
+                () -> assertEquals(25, calc.square(5)),
+                () -> assertEquals(100, calc.square(10)),
+                () -> assertEquals(100, calc.square(-10)),
+                () -> assertEquals(0, calc.square(0))
+        );
+    }
+
+    @Test
+    @DisplayName("Test for squareRoot()")
+    void testSquareRoot() {
+        Assertions.assertAll(
+                () -> assertEquals(3.0, calc.squareRoot(9)),
+                () -> assertEquals(5.0, calc.squareRoot(25)),
+                () -> assertEquals(10.0, calc.squareRoot(100)),
+                () -> assertEquals(0, calc.squareRoot(0)),
+//                () -> assertEquals(Math.sqrt(3), calc.squareRoot(3)),
+                () -> assertEquals(1.732, calc.squareRoot(3), 0.0001),
+                () -> assertThrows(IllegalArgumentException.class, () -> calc.squareRoot(-25))
         );
     }
 }
