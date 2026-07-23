@@ -1,5 +1,3 @@
-package src.prep;
-
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -23,7 +21,7 @@ class TestStringUtilities {
     @DisplayName("Test for isPalindrome()")
     void testIsPalindrome() {
 
-        Assertions.assertAll(
+        assertAll(
                 () -> assertTrue(stringUtilities.isPalindrome("level")),
                 () -> assertTrue(stringUtilities.isPalindrome("Radar")),
                 () -> assertTrue(stringUtilities.isPalindrome("wow")),
@@ -47,7 +45,7 @@ class TestStringUtilities {
     @DisplayName("Test for splitCommaSeparatedLine()")
     void testSplitCommaSeparatedLine() {
 
-        Assertions.assertAll(
+        assertAll(
                 () -> assertEquals(List.of("java", "spring", "Junit", "121"), stringUtilities.splitCommaSeparatedLine("java ,spring, Junit,121")),
                 () -> assertEquals(List.of("java", "spring", "Junit"), stringUtilities.splitCommaSeparatedLine("java,spring,Junit ")),
                 () -> assertEquals(List.of("java", "", "Junit"), stringUtilities.splitCommaSeparatedLine("java,,Junit")),
@@ -134,3 +132,18 @@ class TestStringUtilities {
         assertThrows(IllegalArgumentException.class, () -> stringUtilities.isPalindrome(null));
     }
 }
+
+
+/*
+- Did writing the test cases upfront help you focus on the behaviour you needed to implement?
+- Definitely, thinking about inputs and expected outputs in isolation, regardless of implementation helped me to focus on the edge-cases that can cause error, Implementing the methods based on those tests made the development process much clearer
+
+- Did you manage to think of edge cases that should be covered?
+- Yes I did, thinking about edge cases even helped me ti learn the natural behavior of java on String.split(), where it does not include the Trailing empty strings in result.
+
+- Conversely, what can be a downside (e.g. what tends to happen) if you write tests for a pre-existing implementation?
+- It can lead missing requirements, while writing test for existing code can mainly focus on confirming the current implementation instead of validate intended behavior
+
+- Can you write a test-case for the isPalindrome method that uses @ParameterizedTest and @MethodSource or @CsvSource to provide parameters to the test? Can you change so that there is a clearer description associated with each test based on the inputs and expectations?
+- I did.
+ */
