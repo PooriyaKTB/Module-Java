@@ -2,6 +2,9 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for {@link Calculator}.
+ */
 class CalculatorTest {
 
     private Calculator calc;
@@ -31,6 +34,10 @@ class CalculatorTest {
         );
     }
 
+    /**
+     * Verifies that dividing by zero throws
+     * {@link IllegalArgumentException}.
+     */
     @Test
     @DisplayName("Divide by zero must throw IllegalArgumentException")
     void testDivideByZeroThrows() {
@@ -72,6 +79,11 @@ class CalculatorTest {
         );
     }
 
+
+    /**
+     * Verifies square root calculations, including
+     * floating-point precision and invalid negative input.
+     */
     @Test
     @DisplayName("Test for squareRoot()")
     void testSquareRoot() {

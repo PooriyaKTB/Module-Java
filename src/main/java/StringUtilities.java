@@ -1,14 +1,20 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility methods for working with strings.
+ */
 public class StringUtilities {
 
     /**
      * Checks whether a string is a palindrome.
+     * The comparison is case-insensitive.
      *
      * @param s input string
      * @return true if the string is a palindrome, otherwise false
      * @throws IllegalArgumentException if the input is null
+     *
+     * @see #splitCommaSeparatedLine(String)
      */
     public boolean isPalindrome(String s) {
 
@@ -30,11 +36,14 @@ public class StringUtilities {
 
     /**
      * Splits a comma-separated string into a list.
-     * Note: trailing whitespace is removed from each element.
+     * This method uses {@link String#split(String)}, therefore
+     * trailing empty values are not included in the returned list.
      *
      * @param s comma-separated string
      * @return a list containing the split values
      * @throws IllegalArgumentException if the input is null
+     *
+     * * @see String#split(String)
      */
     public List<String> splitCommaSeparatedLine(String s) {
 
