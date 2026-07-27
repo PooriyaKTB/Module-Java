@@ -1,5 +1,12 @@
+/**
+ * Interface for sending monthly bank statements to customers.
+ */
 public interface StatementSender {
 
+    /**
+     * Sends the bank statement content via the implemented delivery method.
+     * @param statementContent the content of the bank statement to be sent
+     */
     void sendStatement(String statementContent);
 }
 
