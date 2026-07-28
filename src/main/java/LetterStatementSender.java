@@ -5,4 +5,9 @@ public class LetterStatementSender implements StatementSender {
 
         System.out.println(statementContent + " sent via Letter");
     }
+
+    @Override
+    public void sendStatement(Statement statement){
+        System.out.println(statement.createStatement() + " letter");
+    }
 }

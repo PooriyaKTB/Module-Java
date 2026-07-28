@@ -5,4 +5,9 @@ public class EmailStatementSender implements StatementSender {
 
         System.out.println(statementContent + " sent via Email");
     }
+
+    @Override
+    public void sendStatement(Statement statement){
+        System.out.println(statement.createStatement() + " Email");
+    }
 }

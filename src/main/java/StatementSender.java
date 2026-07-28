@@ -8,6 +8,7 @@ public interface StatementSender {
      * @param statementContent the content of the bank statement to be sent
      */
     void sendStatement(String statementContent);
+    void sendStatement(Statement statement);
 }
 
 

@@ -9,6 +9,14 @@ public class Main {
         statementDeliveryService.deliverStatement("hi there", email);
         statementDeliveryService.deliverStatement("bye there", letter);
 
+        System.out.println("*** Exercise 1.2 ***");
+
+        StatementService statementService = new StatementService();
+
+        statementService.createAllTransactionStatement(email);
+        statementService.createAllTransactionStatement(letter);
+        statementService.createOutgoingTransactionStatement(letter);
+
     }
 }
 
