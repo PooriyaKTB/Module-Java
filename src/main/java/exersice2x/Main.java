@@ -71,6 +71,33 @@ public class Main {
         System.out.println("distinctFirstNamesInOrder: " + distinctFirstNamesInOrder);
         System.out.println("lastnameToGrade: " + lastnameToGrade);
         System.out.println("studentToGrade: " + studentToGrade);
+
+        //*** Exercise 2.4 ***
+        /*
+          The highest and lowest grades
+          @see <a href="https://www.geeksforgeeks.org/java/collections-class-in-java/">Collection Class</a>
+         */
+        int highestGrade = Collections.max(studentToGrade.values());
+        System.out.println("HighestGrade:" + highestGrade);
+
+        int lowestGrade = Collections.min(studentToGrade.values());
+        System.out.println("LowestGrade:" + lowestGrade);
+
+        /*
+          The first and last names of the student with the highest grade
+          @see <a href="https://www.geeksforgeeks.org/java/collections-max-method-in-java-with-examples/">Collections max() method</a>
+         */
+        Map.Entry<Student, Integer> highestStudent = Collections.max(studentToGrade.entrySet(), Map.Entry.comparingByValue());
+        System.out.println("Student with highest grade: " + highestStudent.getKey());
+
+        /*
+          Any firstNames that belong to more than one student
+          @see <a href="https://www.geeksforgeeks.org/java/java-collection-removeif-method/">Collection removeIf() Method</a>
+          @see <a href="https://www.geeksforgeeks.org/java/java-util-collections-frequency-java/">Collections.frequency()</a>
+         */
+        Set<String> duplicateNames = new HashSet<>(firstNamesList);
+        duplicateNames.removeIf(name -> Collections.frequency(firstNamesList, name) == 1);
+        System.out.println("Duplicate first names: " + duplicateNames);
     }
 }
 /*
