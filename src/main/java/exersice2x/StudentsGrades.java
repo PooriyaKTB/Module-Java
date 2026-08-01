@@ -8,7 +8,7 @@ public class StudentsGrades {
     private String[] lastNameArr;
     private int[] gradeArr;
 
-     public StudentsGrades(String[] firstNames, String[] lastNames, int[] grades) {
+    public StudentsGrades(String[] firstNames, String[] lastNames, int[] grades) {
         this.firstNameArr = firstNames;
         this.lastNameArr = lastNames;
         this.gradeArr = grades;
@@ -33,6 +33,14 @@ public class StudentsGrades {
             lastNamesGrades.put(lastNames[i], grades[i]);
         }
         return lastNamesGrades;
+    }
+
+    public Map<Student, Integer> getStudentToGrade() {
+        Map<Student, Integer> studentGrade = new HashMap<>();
+        for (int i = 0; i < firstNameArr.length; i++) {
+            studentGrade.put(new Student(firstNameArr[i], lastNameArr[i]), gradeArr[i]);
+        }
+        return studentGrade;
     }
 
     @Override
