@@ -1,3 +1,5 @@
+package exercise1x;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -39,7 +41,7 @@ public class Main {
 - Similarly, what if we decide in future that physical letters are no longer supported; which code do we need to update?
 - By adding @Deprecated annotation for developers (or completly delete it) and updating the specfic class that we want to apply changes on, we can add feature or deactivate existed class/behavor
 
-- Think about how you would test StatementDeliveryService. In practice you wouldn’t want to send an actual email or a letter every time you ran the test, so how could the StatementSender interface help here?
+- Think about how you would test exercise1x.StatementDeliveryService. In practice you wouldn’t want to send an actual email or a letter every time you ran the test, so how could the exercise1x.StatementSender interface help here?
   (NB our expectation here is for a testing-implementation as they won’t have covered mocking yet
 - with Dummy implementation?! I'm not sure, but I've done it with a fake class, I think we call it dummy implementation!
   so that instead of doing actual job, and sending email or any expensive action, we can simply make sure that the specific method that we need has been invoked!

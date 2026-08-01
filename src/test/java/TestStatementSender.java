@@ -1,3 +1,6 @@
+import exercise1x.Statement;
+import exercise1x.StatementDeliveryService;
+import exercise1x.StatementSender;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -6,13 +9,16 @@ import org.junit.jupiter.api.Test;
  * A fake class implementing the interface just for test purpose
  * instead of doing any job, it simply makes us able to ensure the method is called!
  */
-class DummyStatementSender implements StatementSender{
+class DummyStatementSender implements StatementSender {
 
     public boolean isCalled = false;
 
     @Override
     public void sendStatement(String statementContent) {
         isCalled = true;
+    }
+
+    public void sendStatement(Statement statement) { isCalled = true;
     }
 }
 
@@ -23,7 +29,7 @@ public class TestStatementSender {
 
     @Test
     @DisplayName("Testing the method calling")
-    void testDeliveryInstance(){
+    void testDeliveryInstance() {
         deliveryService.deliverStatement("test", fakeStatementSender);
         Assertions.assertTrue(fakeStatementSender.isCalled);
     }

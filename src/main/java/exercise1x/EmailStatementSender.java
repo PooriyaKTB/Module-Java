@@ -1,3 +1,5 @@
+package exercise1x;
+
 public class EmailStatementSender implements StatementSender {
 
     @Override

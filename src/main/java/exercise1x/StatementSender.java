@@ -1,3 +1,5 @@
+package exercise1x;
+
 /**
  * Interface for sending monthly bank statements to customers.
  */

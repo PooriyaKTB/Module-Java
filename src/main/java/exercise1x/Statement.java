@@ -1,3 +1,5 @@
+package exercise1x;
+
 public interface Statement {
 
     String getPeriod();

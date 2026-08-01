@@ -1,4 +1,6 @@
-public class AllTransactionsMonthlyStatement implements Statement{
+package exercise1x;
+
+public class OutgoingTransactionsMonthlyStatement implements Statement{
 
     @Override
     public String getPeriod() {
@@ -22,6 +24,6 @@ public class AllTransactionsMonthlyStatement implements Statement{
 
     @Override
     public String createStatement() {
-        return "All transactions...";
+        return "Outgoing Transactions...";
     }
 }

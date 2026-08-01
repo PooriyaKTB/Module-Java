@@ -1,0 +1,43 @@
+✍️Exercise 2.1
+You are given three arrays containing data relating to students and their grades: firstNames, lastNames and grades. Each student is represented by the same index in each array, so firstNames[i] has the surname lastNames[i] and grade grades[i]. Create a class (with an appropriate name) that takes the three arrays as constructor parameters and has the following methods to collect the data into more sensible structures (note you will need to choose the appropriate return type!):
+
+getFirstNames(String[] firstNames, String[] lastNames, int[] grades)
+getDistinctFirstNames(String[] firstNames, String[] lastNames, int[] grades)
+getDistinctFirstNamesInAlphabeticalOrder(String[] firstNames, String[] lastNames, int[] grades) → Hint: no for loops needed; consider an appropriate collection implementation
+getLastNameToGrade(String[] firstNames, String[] lastNames, int[] grades) (Note you can assume there are no duplicate last names)
+Create a main method that calls each method above and prints the output to the console. The data to use should be:
+
+firstNames = {Anuket, Eryn, Filip, Raquel, Eryn}
+lastNames = {Hassan, Doe, Pappas, Clarke, Jones}
+grades = {22, 45, 35, 22, 41}
+Reflection
+Suppose there are a set of twins in the class, so there are some duplicate lastNames. Can we still build a map of students to their grades?
+
+
+✍️Exercise 2.2
+Create a Student class with fields firstName and lastName
+Implement the following method: Map<Student, Integer> getStudentToGrade
+What methods do you need to define on Student for this map to work safely?
+Update the data set to include the twins and print the result of getStudentToGrade to the console
+
+
+✍️Exercise 2.3
+Now let’s ditch the arrays completely and work only with collections: in your main method, call each of the methods you’ve already created and assign the results to new variables. This will be our starting data.
+Suppose a new student joins the class. Modify each of the collections you’ve created to include the new student and their grade
+Now suppose a student leaves the class. Modify each of the collections to remove that student.
+Now suppose that one of the students was found to have cheated in their exam and their grade needs to be modified. Update the collections to set the grade of one of the students to 0.
+Reflections
+Think about the following questions, make notes and be prepared to talk through your thoughts in the workshop.
+
+Would it have been possible to use Arrays to model the same data?
+Would it have been easier, harder or the same? Why?
+What was your thought process when deciding which data structure was most appropriate for modelling particular data? What things did you consider?
+Suppose the initial data set was input incorrectly and the same student’s name and grade was input twice. How would your Map<Student, Grade> handle this? Why?
+What is the difference between variables: a) List firstNames, b) List<String> firstNames, c) ArrayList<String> firstNames ? Which is preferable? Bonus: how about List<?> firstNames ?
+
+
+✍️Exercise 2.4
+Given the same data as above, without using for loops, find:
+The highest and lowest grades
+The first and last names of the student with the highest grade
+Any firstNames that belong to more than one student

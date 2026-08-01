@@ -1,3 +1,5 @@
+package exercise1x;
+
 public class StatementService {
 
     StatementDeliveryService deliveryService = new StatementDeliveryService();
