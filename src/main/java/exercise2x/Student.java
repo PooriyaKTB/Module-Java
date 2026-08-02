@@ -1,4 +1,4 @@
-package exersice2x;
+package exercise2x;
 
 import java.util.*;
 
