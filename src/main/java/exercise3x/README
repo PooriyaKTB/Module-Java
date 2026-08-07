@@ -1,0 +1,40 @@
+✍️Exercise 3.1
+Create a service that safely reads text files
+
+Create a FileReaderService class with a method #readFile(String filename) that:
+Attempts to read a file using BufferedReader
+Returns the file contents as a String
+Properly handles FileNotFoundException and IOException
+Uses try/finally to ensure the file is closed
+Safely handles the possibility of fileName being null
+Create a custom checked exception called InvalidFileFormatException
+Throw this if the file is empty
+From a main method, call the service with some dummy text files, including an empty file
+
+
+✍️Exercise 3.2
+Refactor your above method to use try-with-resources instead of try/finally
+Reflections
+Think about the following questions, make notes and be prepared to talk through your thoughts in the workshop.
+
+Why are FileNotFoundException and IOException checked rather than unchecked exceptions? What advantages does this give developers and systems that use them?
+In this example we had control over which strings we passed to the method, so in theory we could make sure they wouldn’t ever be null. When writing production code do we have this same level of control?
+When is it beneficial to include null checks, and when isn’t it?
+How does try-with-resources relate to a try/finally block? Think about flexibility / clean code etc
+If an exception is thrown, does a finally block get executed before or after the catch block? How could you prove this?
+What about if the catch block throws an unchecked exception? Does the finally block still execute?
+
+
+✍️Exercise 3.3
+Should try/catch blocks be used as part of ‘standard’ processing? e.g. say I have a payment processing system that accepts cash or card, and I first attempt to process a card payment, before throwing an error and processing cash if no card details are found:
+
+void processPayment(Payment payment) {
+    try {
+        cardProcessor.process(payment);
+    } catch(NoCardDetailsFoundException e) {
+        cashProcessor.process(payment);
+    }
+}
+Will this work correctly? If we know some payments will definitely be made by cash, is there a better way to handle this? Why?
+What are some potential problems with throwing errors like this? Think about: when we want to find out about errors / unnecessary processing etc
+Update the above pseudocode to remove the try/catch block and handle the card/cash options more gracefully. Feel free to invent some methods on Payment to help you!
