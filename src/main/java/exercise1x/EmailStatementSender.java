@@ -1,5 +1,8 @@
 package exercise1x;
 
+/**
+ * Sends bank statements by email.
+ */
 public class EmailStatementSender implements StatementSender {
 
     @Override

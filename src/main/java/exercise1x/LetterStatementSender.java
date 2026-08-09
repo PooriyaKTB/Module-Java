@@ -1,5 +1,8 @@
 package exercise1x;
 
+/**
+ * Sends bank statements by letter.
+ */
 public class LetterStatementSender implements StatementSender {
 
     @Override

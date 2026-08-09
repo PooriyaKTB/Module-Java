@@ -2,8 +2,19 @@ package exercise3x;
 
 import java.io.*;
 
+/**
+ * Reads text files and returns their contents.
+ */
 public class FileReaderService {
 
+    /**
+     * Reads the contents of a text file.
+     *
+     * @param fileName the name of the file to read
+     * @return the contents of the file
+     * @throws InvalidFileFormatException if the file is empty
+     * @throws IllegalArgumentException if the file name is null
+     */
     public String readFile(String fileName) throws InvalidFileFormatException {
 
         String content = "";

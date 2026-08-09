@@ -1,5 +1,8 @@
 package exercise1x;
 
+/**
+ * Represents a monthly statement containing all transactions.
+ */
 public class AllTransactionsMonthlyStatement implements Statement{
 
     @Override

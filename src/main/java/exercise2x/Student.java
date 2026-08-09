@@ -2,6 +2,9 @@ package exercise2x;
 
 import java.util.*;
 
+/**
+ * Represents a student with a first name and last name.
+ */
 public class Student {
 
     private final String firstName;
