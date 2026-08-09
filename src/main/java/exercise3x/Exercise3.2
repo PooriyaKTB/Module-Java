@@ -1,0 +1,34 @@
+- Why are FileNotFoundException and IOException checked rather than unchecked exceptions? What advantages does this give developers and systems that use them?
+- because compiler check for them on compile time rather runtime. They are also exceptions that we can expect to happen when working with files, so we are forced to think about how to handle them.
+
+- In this example we had control over which strings we passed to the method, so in theory we could make sure they wouldn’t ever be null. When writing production code do we have this same level of control?
+- If the data comes from a user or an external system, there is no guarantee that the value will be valid or non-null, so we should validate it before using it.
+
+- When is it beneficial to include null checks, and when isn’t it?
+- while working with unpredictable or external data, like data from a user or an external system, it is useful to check for null.
+  however, if we have a clear contract that guarantees a value will not be null, an additional null check may not be necessary.
+
+- How does try-with-resources relate to a try/finally block? Think about flexibility / clean code etc
+- Try-with-resources is cleaner and safer because Java automatically closes resources that implement 'AutoCloseable', even when an exception occurs. So, it removes the need to manually close the resource inside a finally block and makes the code easier to read.
+
+- If an exception is thrown, does a finally block get executed before or after the catch block? How could you prove this?
+- it will execute after the try/catch block, finally block simply says do whatever exist in try/catch when you're done with them do this
+  try -> catch -> finally
+
+  Proof:
+
+  try {
+      System.out.println("TRY");
+      throw new Exception();
+  } catch (Exception e) {
+      System.out.println("CATCH");
+  } finally {
+      System.out.println("FINALLY");
+  }
+
+- What about if the catch block throws an unchecked exception? Does the finally block still execute?
+- Yes. The finally block will still execute even if the catch block throws an unchecked exception.
+
+  try -> catch -> exception thrown -> finally -> Runtime Exception handling
+
+  * The 'finally' block executes before the 'RuntimeException' leaves the method.

@@ -1,0 +1,30 @@
+✍️Exercise 3.3
+
+- Should try/catch blocks be used as part of ‘standard’ processing? e.g. say I have a payment processing system that accepts cash or card, and I first attempt to process a card payment, before throwing an error and processing cash if no card details are found:
+- I don't think this is an appropriate approach because choosing between card and cash is part of our business flow, not an exceptional situation. If we already know the payment method, we should check it directly and call the appropriate processor.
+  Apart that we use exceptions to handle unforeseen failures, not different options!
+
+- Will this work correctly? If we know some payments will definitely be made by cash, is there a better way to handle this? Why?
+- Yes, it will work, but definitely not the best approach!
+  Of course, we should have the option to invoke the appropriate method based on the payment method.
+  It's faster, more clear and straight forward, it also avoids unnecessary processing!
+
+- What are some potential problems with throwing errors like this? Think about: when we want to find out about errors / unnecessary processing etc
+- First of all this approach is not readable and efficient.
+  Using exceptions for normal business flow can cause unnecessary processing because the system tries to process a card payment before discovering that the payment is actually cash.
+  It can also make the code less readable because a normal situation, like a cash payment, is being treated as an error.
+  Exception handling can also make error monitoring more difficult because expected situations may be recorded or treated as errors, making it harder to identify real problems.
+
+- Update the above pseudocode to remove the try/catch block and handle the card/cash options more gracefully. Feel free to invent some methods on Payment to help you!
+-
+void processPayment(Payment payment) {
+    if (payment.isCardPayment()) {
+        cardProcessor.process(payment);
+    } else if (payment.isCreditCardPayment()) {
+        creditCardProcessor.process(payment);
+    } else if (payment.isCashPayment()) {
+        cashProcessor.process(payment);
+    } else {
+        System.out.println("No acceptable payment method");
+    }
+}
