@@ -1,0 +1,14 @@
+-  In general, do you find streams more or less readable than loops? Think about trivial vs more complex data manipulation
+-
+
+- How about when writing code; do you find it easier to write using streams or loops?
+-
+
+- Are there any hard and fast rules about when and when not to use streams? What are some trade-offs to consider when deciding?
+-
+
+- Can you think of an example of when using an Optional would be useful? How about an example of when using an Optional may actually make things worse?
+-
+
+- Do you need to memorise all the available stream operations? What is a useful tool to find out which methods are available?
+-
