@@ -1,4 +1,4 @@
-package RentalSummaryGenerator;
+package rentalSummaryGenerator;
 
 import java.time.LocalDate;
 
@@ -19,7 +19,7 @@ public class Main {
         RentalSummaryService rentalSummaryService = new RentalSummaryService();
         try {
             rentalSummaryService.printRentalSummary(oneYearContract);
-//            rentalSummaryService.printRentalSummary(twoYearContract); // Should throw a suitable error
+            rentalSummaryService.printRentalSummary(twoYearContract); // Should throw a suitable error
             rentalSummaryService.printRentalSummary(threeYearContract);
             rentalSummaryService.printRentalSummary(completedContract); // Should print a message to say the contract is complete
         } catch (IllegalArgumentException e) {

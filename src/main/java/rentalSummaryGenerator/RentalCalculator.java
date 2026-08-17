@@ -1,4 +1,4 @@
-package RentalSummaryGenerator;
+package rentalSummaryGenerator;
 
 import java.util.List;
 

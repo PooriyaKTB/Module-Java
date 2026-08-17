@@ -1,4 +1,4 @@
-package RentalSummaryGenerator;
+package rentalSummaryGenerator;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,7 +14,7 @@ public class RentalSummary {
     private Optional<LocalDate> nextDue;
     private double totalAmount;
     private double outstandingAmount;
-    private double outstandingCount;
+    private long outstandingCount;
     private boolean isSettled;
 
     public RentalSummary(String customerName, int customerAge, LocalDate startDate, LocalDate endDate) {
@@ -72,7 +72,7 @@ public class RentalSummary {
         this.outstandingAmount = outstandingAmount;
     }
 
-    public void setOutstandingCount(double outstandingCount) {
+    public void setOutstandingCount(long outstandingCount) {
         this.outstandingCount = outstandingCount;
     }
 
@@ -91,12 +91,12 @@ public class RentalSummary {
                 ", customerAge=" + customerAge +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", rentals=" + rentals +
                 ", nextDue=" + nextDue +
                 ", totalAmount=" + String.format("%.2f", totalAmount) +
                 ", outstandingAmount=" + String.format("%.2f", outstandingAmount) +
                 ", outstandingCount=" + outstandingCount +
                 ", isSettled=" + isSettled +
+                ", rentals=" + rentals +
                 '}';
     }
 }

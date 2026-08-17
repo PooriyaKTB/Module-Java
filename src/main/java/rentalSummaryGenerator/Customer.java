@@ -1,4 +1,4 @@
-package RentalSummaryGenerator;
+package rentalSummaryGenerator;
 
 public class Customer {
 
