@@ -11,7 +11,7 @@ public class RentalSummary {
     private final LocalDate startDate;
     private final LocalDate endDate;
     private List<Rental> rentals;
-    private Optional<LocalDate> nextDue;
+    private LocalDate nextDue;
     private double totalAmount;
     private double outstandingAmount;
     private long outstandingCount;
@@ -49,10 +49,10 @@ public class RentalSummary {
     }
 
     public Optional<LocalDate> getNextDue() {
-        return nextDue;
+        return Optional.ofNullable(this.nextDue);
     }
 
-    public void setNextDue(Optional<LocalDate> nextDue) {
+    public void setNextDue(LocalDate nextDue) {
         this.nextDue = nextDue;
     }
 

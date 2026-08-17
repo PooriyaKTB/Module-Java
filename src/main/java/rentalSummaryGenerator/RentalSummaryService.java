@@ -24,15 +24,16 @@ public class RentalSummaryService {
         summary.setRentals(rentalCalculator.generateRentals(contract));
 
         List<Rental> rentals = summary.getRentals();
+        LocalDate today = LocalDate.now();
 
-        if (rentals.get(rentals.size() - 1).getDueDate().isBefore(LocalDate.now())) {
+        if (rentals.get(rentals.size() - 1).getDueDate().isBefore(today)) {
             return Optional.empty();
         }
 
-        summary.setNextDue(rentals.stream().map(Rental::getDueDate).filter(dueDate -> (dueDate).isAfter(LocalDate.now())).findFirst());
-        summary.setTotalAmount(rentals.stream().map(Rental::getInterestAmount).reduce(0.0, (acc, cur) -> acc + cur), contract.getCarPrice());
-        summary.setOutstandingAmount(rentals.stream().filter(r -> (r.getDueDate()).isAfter(LocalDate.now())).mapToDouble(r -> r.getCapitalAmount() + r.getInterestAmount()).reduce(0, (acc, cur) -> acc + cur));
-        summary.setOutstandingCount(rentals.stream().filter(r -> (r.getDueDate()).isAfter(LocalDate.now())).count());
+        summary.setNextDue(rentals.stream().map(Rental::getDueDate).filter(dueDate -> (dueDate).isAfter(today)).findFirst().orElse(null));
+        summary.setTotalAmount(rentals.stream().map(Rental::getInterestAmount).reduce(0.0, Double::sum), contract.getCarPrice());
+        summary.setOutstandingAmount(rentals.stream().filter(r -> (r.getDueDate()).isAfter(today)).mapToDouble(r -> r.getCapitalAmount() + r.getInterestAmount()).reduce(0, Double::sum));
+        summary.setOutstandingCount(rentals.stream().filter(r -> (r.getDueDate()).isAfter(today)).count());
 //        summary.setSettled(rentals.stream().map(r -> r.getDueDate().isAfter(LocalDate.now())).findAny().isPresent());
         summary.setSettled(rentals.stream().allMatch(Rental::isPaid));
 

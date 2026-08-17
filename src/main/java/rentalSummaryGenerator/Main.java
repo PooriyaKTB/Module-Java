@@ -19,9 +19,9 @@ public class Main {
         RentalSummaryService rentalSummaryService = new RentalSummaryService();
         try {
             rentalSummaryService.printRentalSummary(oneYearContract);
-            rentalSummaryService.printRentalSummary(twoYearContract); // Should throw a suitable error
             rentalSummaryService.printRentalSummary(threeYearContract);
             rentalSummaryService.printRentalSummary(completedContract); // Should print a message to say the contract is complete
+            rentalSummaryService.printRentalSummary(twoYearContract); // Should throw a suitable error
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
