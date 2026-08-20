@@ -20,7 +20,10 @@ class CalculatorTest {
         assertAll(
                 () -> assertEquals(5, calc.add(2, 3)),
                 () -> assertEquals(0, calc.add(0, 0)),
-                () -> assertEquals(1, calc.add(1, 0))
+                () -> assertEquals(1, calc.add(1, 0)),
+                () -> assertEquals(-1, calc.add(-1, 0)),
+                () -> assertEquals(1, calc.add(-1, 2)),
+                () -> assertEquals(-5, calc.add(-2, -3))
         );
     }
 
@@ -30,7 +33,9 @@ class CalculatorTest {
         assertAll(
                 () -> assertEquals(20, calc.divide(60, 3)),
                 () -> assertEquals(10, calc.divide(100, 10)),
-                () -> assertEquals(2, calc.divide(10, 5))
+                () -> assertEquals(2, calc.divide(10, 5)),
+                () -> assertEquals(2, calc.divide(7, 3)),
+                () -> assertEquals(0, calc.divide(0, 5))
         );
     }
 

@@ -26,6 +26,8 @@ class TestStringUtilities {
     void testIsPalindrome() {
 
         assertAll(
+                () -> assertTrue(stringUtilities.isPalindrome("noon")),
+                () -> assertTrue(stringUtilities.isPalindrome("été")),
                 () -> assertTrue(stringUtilities.isPalindrome("level")),
                 () -> assertTrue(stringUtilities.isPalindrome("Radar")),
                 () -> assertTrue(stringUtilities.isPalindrome("wow")),
@@ -34,6 +36,9 @@ class TestStringUtilities {
                 () -> assertTrue(stringUtilities.isPalindrome(" ")),
                 () -> assertTrue(stringUtilities.isPalindrome("")),
 
+                () -> assertFalse(stringUtilities.isPalindrome("😊☺️😊")),
+                () -> assertFalse(stringUtilities.isPalindrome("\uD83D\uDE0A\uFE0F\uD83D\uDE0A")),
+                () -> assertFalse(stringUtilities.isPalindrome("A man, a plan, a canal: Panama")),
                 () -> assertFalse(stringUtilities.isPalindrome("lev el")),
                 () -> assertFalse(stringUtilities.isPalindrome("java")),
                 () -> assertFalse(stringUtilities.isPalindrome("Junit")),
