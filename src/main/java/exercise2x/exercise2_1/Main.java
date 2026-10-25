@@ -12,7 +12,10 @@ public class Main {
         Engine engine = new Engine(gears, cambelt);
         Car car = new Car(engine);
 
+        Car car2 = new Car(new Engine(new Gears(cogs),new Cambelt()));
+
         car.start();
+        car2.start();
     }
 
     static class Car {
